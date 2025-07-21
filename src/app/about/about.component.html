@@ -1,0 +1,32 @@
+<!-- about.component.html -->
+<section class="section  flex items-center justify-center px-8 font-josefin text-couleur-text">
+  <div class="max-w-6xl mx-auto w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="fade-in">
+        <h2 class="text-5xl font-bold text-first mb-8">About Me</h2>
+        <p class="text-xl text-couleur-text mb-6">
+          Je suis une développeuse  passionnée par la création de solutions digitales modernes, efficaces et esthétiques. J’aime transformer des idées en projets concrets : sites web, applications mobiles, plateformes sur-mesure…
+
+          Je ne me limite jamais à ce que je sais. Curieuse de nature et toujours en quête de nouvelles connaissances, je me forme en continu, explore les dernières technologies et reste attentive aux évolutions du secteur pour toujours progresser.
+
+
+        </p>
+        <p class="text-lg text-couleur-text mb-8">
+          Au-delà du développement, je m’intéresse aussi à l’entrepreneuriat, à la créativité et à tout ce qui peut rendre la technologie plus utile et accessible. À travers mes projets, je cherche à créer des solutions concrètes, évolutives et adaptées aux vrais besoins.
+
+        </p>
+      </div>
+      <div class="fade-in md:block hidden">
+        <div class="relative">
+          <div
+            class="w-full h-96 bg-cover bg-center rounded-2xl"
+            [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}"
+          ></div>
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary rounded-2xl flex items-center justify-center">
+            <i class="ri-code-s-slash-line text-4xl text-white w-8 h-8 flex items-center justify-center"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

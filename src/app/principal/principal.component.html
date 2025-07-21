@@ -1,0 +1,122 @@
+<div class="bg-couleur-fond">
+  <div class="max-w-screen-lg p-4 mx-auto bg-couleur-fond">
+    <section class="bg-couleur-fond min-h-screen px-10 py-10 font-josefin">
+      <!-- Header -->
+      <header class="flex justify-between items-center py-4 px-2 bg-couleur-fond font-josefin">
+        <!-- Logo + nom -->
+        <div class="flex items-center gap-3 md:hidden ">
+          <img src="assets/images/sephora.JPG" alt="Sephora" class="w-12 h-16 object-cover rounded-full" />
+          <span class="text-couleur-text font-bold text-lg">Sephora DIDAVI</span>
+        </div>
+
+        
+
+        <!-- Hamburger menu (mobile) -->
+        <button class="md:hidden text-couleur-text" (click)="toggleMenu()">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </header>
+
+        <!-- Mobile menu (déroulant) -->
+        <nav
+        *ngIf="menuOpen"
+        class="md:hidden flex flex-col items-center gap-4 py-4 bg-couleur-fond text-couleur-text font-semibold 
+              animate-slide-down"
+        >
+          <a href="#projects" (click)="scrollToSection('projects')">Projets</a>
+          <a href="#skills" (click)="scrollToSection('skills')">Compétences</a>
+          <a href="#about" (click)="scrollToSection('about')">A Propos</a>
+          <a href="#contact" (click)="scrollToSection('contact')">Contacts</a>
+        </nav>
+
+
+
+      <!-- Hero Section -->
+      <div class="text-center mt-2 pt-20 flex flex-col justify-center text-center relative overflow-hidden font-josefin">
+          <h1 class="relative z-10 text-4xl md:text-6xl font-extrabold text-couleur-text leading-tight animate-fade-down transition-all duration-500">
+            Développeuse <span class="text-first">Web</span> & <span class="text-second">Mobile</span>
+          </h1>
+
+        <p class="relative z-10 mt-6 text-lg md:text-2xl text-couleur-text max-w-3xl animate-fade-up transition-all duration-500">
+          Je transforme vos idées <span class="font-bold text-first">en solutions concrètes</span>
+        </p>
+
+        <a href="mailto:sephoradidavi6@gmail.com"
+          class="relative z-10 mx-auto w-auto max-w-fit inline-flex items-center gap-3 mt-10 px-8 py-2 text-lg md:text-xl font-bold rounded-full bg-second text-couleur-secondaire shadow-xl hover:scale-105 hover:bg-first transition-all duration-300">
+          Me contacter
+          <svg class="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M502.3 190.8l-192-160A48 48 0 00288 32H80a48 48 0 00-48 48v352a48 48 0 0048 48h352a48 48 0 0048-48V240a48 48 0 00-18.3-49.2zM464 432a16 16 0 01-16 16H80a16 16 0 01-16-16V160l208 132 208-132zM256 294L48 160h416z"/>
+            </svg>
+        </a>
+      </div>
+
+      <!-- Social Icons (à gauche) -->
+      <div class="fixed top-1/2 left-4 flex flex-col gap-4 -translate-y-1/2 text-couleur-text text-xl">
+      <div class="card">
+        <ul>
+          <!-- GitHub -->
+          <li class="iso-pro">
+            <span></span><span></span><span></span>
+            <a href="https://bit.ly/42wypvx" target="_blank">
+              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-5.1 0-8.8-4.1-9.3-9.1-.3-3.4.2-7.3 1.7-11.1 1.5-3.8 4.7-7.2 9.3-9.1 3.2-1.4 6.8-1.9 10.1-1.4 3.2.4 6.3 1.8 9 3.7 3.6 2.7 6.4 6.8 7.4 11.1.7 3.2.6 7-.5 10.4-1.5 5.3-5.7 9.7-10.9 12.6-6 3.4-13.1 5.5-20.1 5.5-15.2 0-26.6-12.7-26.6-28.2 0-11.6 6.7-21.6 16.5-26.5 6.1-3 12.8-3.9 19.2-2.7 7.1 1.3 14.2 4.8 20.1 9.9 7.4 6.4 12.4 14.8 14.7 24.5 1.8 7.3 1.4 15.2-1.1 22.4-3.8 10.7-12.2 19.8-23.3 25.4zM248 8C111 8 0 119 0 256c0 110.8 71.8 204.7 171.5 237.8 12.5 2.3 17.1-5.4 17.1-12v-42.4c-69.9 15.1-84.7-30.1-84.7-30.1-11.4-28.9-27.9-36.6-27.9-36.6-22.8-15.6 1.7-15.3 1.7-15.3 25.2 1.8 38.5 25.9 38.5 25.9 22.3 38.2 58.4 27.1 72.6 20.7 2.2-16.1 8.7-27.1 15.8-33.4-55.8-6.3-114.5-27.9-114.5-124.3 0-27.5 9.8-50.1 25.8-67.7-2.6-6.3-11.2-31.6 2.4-65.9 0 0 21-6.7 68.8 25.8 20-5.6 41.4-8.4 62.6-8.5 21.2.1 42.6 2.9 62.6 8.5 47.8-32.5 68.8-25.8 68.8-25.8 13.6 34.3 5 59.6 2.4 65.9 16 17.6 25.8 40.2 25.8 67.7 0 96.7-58.7 118-114.6 124.3 8.9 7.7 16.9 23 16.9 46.3v68.7c0 6.6 4.6 14.4 17.2 12C424.2 460.7 496 366.8 496 256 496 119 385 8 248 8z"/>
+              </svg>
+            </a>
+            <div class="text">GitHub</div>
+          </li>
+
+          <!-- LinkedIn -->
+          <li class="iso-pro">
+            <span></span><span></span><span></span>
+            <a href="http://bit.ly/4cBGW53" target="_blank">
+              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M100.28 448H7.4V149.4h92.88zm-46.44-340.7C24.5 107.3 0 82.8 0 53.4A53.31 53.31 0 0153.36 0C82.7 0 107.2 24.5 107.2 53.4c0 29.4-24.5 53.9-53.36 53.9zM447.9 448h-92.4V302.4c0-34.7-.7-79.4-48.4-79.4-48.4 0-55.8 37.8-55.8 76.8V448h-92.7V149.4h89V188h1.3c12.4-23.5 42.6-48.4 87.7-48.4 93.8 0 111.1 61.7 111.1 141.9V448z"/>
+              </svg>
+            </a>
+            <div class="text">LinkedIn</div>
+          </li>
+
+          <!-- Gmail -->
+          <li class="iso-pro">
+            <span></span><span></span><span></span>
+            <a href="mailto:sephoradidavi6@gmail.com">
+              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M502.3 190.8l-192-160A48 48 0 00288 32H80a48 48 0 00-48 48v352a48 48 0 0048 48h352a48 48 0 0048-48V240a48 48 0 00-18.3-49.2zM464 432a16 16 0 01-16 16H80a16 16 0 01-16-16V160l208 132 208-132zM256 294L48 160h416z"/>
+              </svg>
+            </a>
+            <div class="text">Gmail</div>
+          </li>
+
+          <!-- Facebook -->
+          <li class="iso-pro">
+            <span></span><span></span><span></span>
+            <a href="https://facebook.com/sephora-didavi" target="_blank">
+              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path d="M279.14 288l14.22-92.66h-88.91V136c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.2 0-121.08 44.4-121.08 124.72V195H22.89V288h81.39v224h100.2V288z"/>
+              </svg>
+            </a>
+            <div class="text">Facebook</div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+      
+    </section>
+
+</div>
+<!-- Flèche en bas à droite -->
+<button
+  (click)="scrollToNext()"
+  class="fixed bottom-6 right-6 bg-couleur-text text-white p-3 rounded-full shadow-lg hover:bg-first transition z-50 hidden md:block"
+  aria-label="Aller à la section suivante">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+  </svg>
+</button>
+
+</div>
+
