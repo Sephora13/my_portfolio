@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { PrincipalComponent } from '../principal/principal.component';
@@ -18,15 +17,6 @@ import { FooterComponent } from '../footer/footer.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent  {
-  constructor(private router: Router){}
   
-  scrollLeft(container: HTMLElement) {
-    container.scrollBy({ left: -200, behavior: 'smooth' });
-  }
-  
-  scrollRight(container: HTMLElement) {
-    container.scrollBy({ left: 200, behavior: 'smooth' });
-  }
-
   
 }
