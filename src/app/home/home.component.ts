@@ -26,17 +26,38 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const sections = document.querySelectorAll('main section');
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-fadeIn');
-            }
-          });
-        }, { threshold: 0.5 });
+  const container = document.querySelector<HTMLElement>('main');
 
-        sections.forEach(section => observer.observe(section));
-      
+  if (container) {
+    container.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+
+        container.scrollBy({
+          left: e.deltaY,
+          behavior: 'smooth'
+        });
       }
+    }, { passive: false });
+  }
+
+  // Sélection des sections
+  const sections = document.querySelectorAll('main section');
+
+  // Observer pour fadeIn
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fadeIn');
+      }
+    });
+  }, {
+    threshold: 0.3,  // déclenche quand ~30% visible
+    root: container, // ⚡ important : observer dans ton "main"
+  });
+
+  sections.forEach(section => observer.observe(section));
+}
+
   
 }
