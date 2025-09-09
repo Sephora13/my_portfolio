@@ -17,6 +17,7 @@ export class PrincipalComponent {
 
   currentIndex = 0;
 
+   
 scrollToNext() {
   const container = document.querySelector('main');
   const sections = container?.querySelectorAll('section');
@@ -24,7 +25,8 @@ scrollToNext() {
   if (sections && container) {
     this.currentIndex = (this.currentIndex + 1) % sections.length;
     const nextSection = sections[this.currentIndex];
-    nextSection.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+    nextSection.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+
   }
 }
 

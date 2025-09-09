@@ -8,6 +8,7 @@ import { SkillsComponent } from '../skills/skills.component';
 import { AboutComponent } from '../about/about.component';
 import { ContactComponent } from '../contact/contact.component';
 import { FooterComponent } from '../footer/footer.component';
+import { AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,22 @@ import { FooterComponent } from '../footer/footer.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent  {
-  
+export class HomeComponent implements AfterViewInit {
+
+  constructor(private router: Router) {}
+
+  ngAfterViewInit() {
+    const sections = document.querySelectorAll('main section');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fadeIn');
+            }
+          });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => observer.observe(section));
+      
+      }
   
 }
