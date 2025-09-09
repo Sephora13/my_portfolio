@@ -9,6 +9,7 @@ import { AboutComponent } from '../about/about.component';
 import { ContactComponent } from '../contact/contact.component';
 import { FooterComponent } from '../footer/footer.component';
 import { AfterViewInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,10 @@ import { AfterViewInit } from '@angular/core';
 })
 export class HomeComponent implements AfterViewInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,  private title: Title, private meta: Meta) {
+    this.title.setTitle('Sephora DIDAVI - Accueil');
+    this.meta.updateTag({ name: 'description', content: 'Bienvenue sur mon portfolio, découvrez mes projets et compétences.' });
+  }
 
   ngAfterViewInit() {
     const sections = document.querySelectorAll('main section');
