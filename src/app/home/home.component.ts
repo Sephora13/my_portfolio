@@ -8,7 +8,7 @@ import { SkillsComponent } from '../skills/skills.component';
 import { AboutComponent } from '../about/about.component';
 import { ContactComponent } from '../contact/contact.component';
 import { FooterComponent } from '../footer/footer.component';
-import { AfterViewInit } from '@angular/core';
+import { AfterViewInit,  ElementRef, Renderer2, } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
@@ -20,14 +20,24 @@ import { Title, Meta } from '@angular/platform-browser';
 })
 export class HomeComponent implements AfterViewInit {
 
-  constructor(private router: Router,  private title: Title, private meta: Meta) {
+  constructor(private router: Router,  private title: Title, private meta: Meta, private renderer: Renderer2, private el: ElementRef) {
     this.title.setTitle('Sephora DIDAVI - Accueil');
     this.meta.updateTag({ name: 'description', content: 'Bienvenue sur mon portfolio, découvrez mes projets et compétences.' });
   }
 
   ngAfterViewInit() {
   const container = document.querySelector<HTMLElement>('main');
+  this.handleSplashScreen();
+  
+   const splash = document.getElementById('splash-screen');
 
+    if (splash) {
+      setTimeout(() => {
+        splash.classList.add('fade-out');
+        setTimeout(() => splash.style.display = 'none', 800);
+      }, 2500); // 2.5s le temps de voir l'animation Pixar-like
+    }
+  
   if (container) {
     container.addEventListener('wheel', (e) => {
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
@@ -53,11 +63,27 @@ export class HomeComponent implements AfterViewInit {
     });
   }, {
     threshold: 0.3,  // déclenche quand ~30% visible
-    root: container, // ⚡ important : observer dans ton "main"
+    root: container, // important : observer dans ton "main"
   });
 
   sections.forEach(section => observer.observe(section));
 }
+
+
+  //splash screen
+  private handleSplashScreen(): void {
+    const splashScreen = this.el.nativeElement.querySelector('#splash-screen');
+    if (splashScreen) {
+      setTimeout(() => {
+        this.renderer.setStyle(splashScreen, 'opacity', '0');
+        this.renderer.setStyle(splashScreen, 'transition', 'opacity 0.5s ease-out');
+        setTimeout(() => {
+          this.renderer.removeChild(this.el.nativeElement, splashScreen);
+        }, 500);
+      }, 1000);
+    }
+  }
+
 
   
 }

@@ -1,8 +1,12 @@
 
 <!-- Main desktop -->
 <main
-  class="hidden md:flex flex overflow-x-auto snap-x snap-mandatory h-screen w-screen scroll-smooth scrollbar-hide"
+  class="hidden md:flex flex overflow-x-auto snap-x snap-mandatory h-screen w-screen scroll-smooth scrollbar-hide duration-300"
 >
+
+   <div id="splash-screen" class=" hidden md:flex fixed inset-0 z-50 items-center justify-center bg-custom-gradient">
+    <h1 class="splash-title text-first font-extrabold font-space text-5xl">Sephora DIDAVI</h1>
+  </div>
   <!-- Section 1 -->
   <section
     id="home"
@@ -22,7 +26,7 @@
   <!-- Section 3 -->
   <section
     id="skills"
-    class="min-w-full h-full px-10 py-8 snap-start flex items-center justify-center bg-couleur-secondaire"
+    class=" font-josefin min-w-full h-full px-10 py-8 snap-start flex items-center justify-center bg-couleur-secondaire"
   >
     <app-skills></app-skills>
   </section>

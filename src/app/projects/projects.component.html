@@ -1,4 +1,4 @@
-<div class=" md:block">
+<div class="hidden md:block">
   <div class="max-w-screen-lg p-2 mx-auto">
     <section class="min-h-screen  py-10 font-josefin">
       <div class="text-center mb-12 mt-10">
@@ -11,9 +11,11 @@
         <div class="mx-auto h-1 w-24 bg-couleur-text rounded-full"></div>
       </div>
 
-      <div class="relative ">
+      <!-- Container avec scroll horizontal -->
+    
+      <div class="relative">
         <div #scrollContainer
-          class="flex flex-col md:flex-row gap-8 overflow-hidden overflow-x-scroll scroll-container scrollbar-hide snap-x snap-mandatory scroll-smooth">
+          class="flex flex-col md:flex-row gap-8 overflow-hidden overflow-x-scroll scroll-container  snap-x snap-mandatory scroll-smooth scrollbar-hide ">
 
           <div *ngFor="let project of projects"
             class="glassmorphism min-w-[300px] md:min-w-[350px] lg:min-w-[400px] rounded-2xl overflow-hidden hover:neon-glow transition-all duration-300 fade-in group snap-start">
@@ -30,31 +32,14 @@
                 {{project.description}}
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-2 py-1   text-xs rounded bg-blue-100 text-blue-800 rounded-ful"
+                <span class="px-2 py-1  text-xs bg-blue-100 text-blue-800 rounded-full"
                   *ngFor="let tag of project.tags">{{tag}}</span>
               </div>
-              <!-- <div class="flex gap-3">
-                <button
-                  class="flex-1 px-4 py-2 bg-primary text-white !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap">
-                  <div class="w-4 h-4 inline-flex items-center justify-center mr-2">
-                    <i class="ri-external-link-line"></i>
-                  </div>
-                  Démo
-                </button>
-                <button
-                  class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 !rounded-button hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors whitespace-nowrap">
-                  <div class="w-4 h-4 inline-flex items-center justify-center mr-2">
-                    <i class="ri-github-line"></i>
-                  </div>
-                  GitHub
-                </button>
-              </div> -->
             </div>
           </div>
         </div>
       </div>
   
-      <!-- Container avec scroll horizontal -->
     
       <div
         class="h-[15rem] md:h-[10rem] rounded-xl z-40 [mask-image:radial-gradient(50%_50%_at_50%_50%,white_0%,transparent_100%)]"
@@ -178,3 +163,268 @@
   </div>
 </div>
 
+<!-- Version Mobile -->
+<div class="md:hidden">
+  <div class="max-w-screen-lg p-4 mx-auto">
+    <section class="min-h-screen px-4 py-10 font-josefin">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold text-couleur-fond mb-4">
+          Mes <span class="text-first">Projets</span>
+        </h1>
+        <p class="text-lg text-gray-600">
+          Quelques projets sur lesquels j'ai travaillé
+        </p>
+        <div class="mx-auto h-1 w-24 bg-couleur-text rounded-full mt-4"></div>
+      </div>
+
+      <!-- Container avec scroll vertical -->
+      <div class="flex flex-col space-y-8">
+        <!-- CARD -->
+        <div class="bg-gray-100 rounded-xl shadow-md overflow-hidden">
+          <div
+            class="h-48 bg-cover bg-center"
+            style="
+              background-image: url(&quot;assets/images/academia.png&quot;);
+            "
+            alt="Academia Application"
+          ></div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Gestion d'examens scolaires
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Automatisations du déroulement des examens scolaires.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 text-blue-800 rounded-full"
+                >Angular</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 text-blue-800 rounded-full"
+                >Tailwind</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 text-blue-800 rounded-full"
+                >NestJs</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 text-blue-800 rounded-full"
+                >Fast-Api</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Autres cards -->
+        <div class="bg-gray-100 rounded-xl shadow-md overflow-hidden">
+          <div
+            class="h-48 bg-cover bg-center"
+            style="background-image: url(&quot;assets/images/sozo1.png&quot;)"
+            alt="SozoBehealthy Landing Page"
+          ></div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Landing Page</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Présentation d'un livre de nutrition avec commande et paiement en
+              ligne.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 text-sm bg-green-100 text-green-800 rounded-full"
+                >Bootstrap</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-green-100 text-green-800 rounded-full"
+                >Html</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-green-100 text-green-800 rounded-full"
+                >Php</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-100 rounded-xl shadow-md overflow-hidden">
+          <div
+            class="h-48 bg-cover bg-center"
+            style="background-image: url(&quot;assets/images/Scholar.png&quot;)"
+            alt="Appli de paiment de scolarité"
+          ></div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Appli de paiment de scolarité</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Conçue pour permettre aux étudiants et à leurs parents de payer les frais de scolarité en ligne sans se déplacer vers le sécrétariat de l'école
+            </p>
+            <span
+              class="px-2 py-1 text-sm bg-green-100 text-green-800 rounded-full"
+              >Flutter</span
+            >
+          </div>
+        </div>
+
+        <div class="bg-gray-100 rounded-xl shadow-md overflow-hidden">
+          <div
+            class="h-48 bg-cover bg-center"
+            style="background-image: url(&quot;assets/images/3.png&quot;)"
+            alt="Bites"
+          ></div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Bites</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Interfaces d'applications réalisées pour exercice personnel
+            </p>
+            <span
+              class="px-2 py-1 text-sm bg-green-100 text-green-800 rounded-full"
+              >Flutter</span
+            >
+          </div>
+        </div>
+         <div class="bg-gray-100 rounded-xl shadow-md overflow-hidden">
+          <div
+            class="h-48 bg-cover bg-center"
+            style="
+              background-image: url(&quot;assets/images/portfolio.png&quot;);
+            "
+            alt="Sephora DIDAVI Portfolio"
+          ></div>
+          <div class="p-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Portfolio</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Présentation des services, des compétences.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 text-sm bg-green-100 text-green-800 rounded-full"
+                >Angular</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-green-100 text-green-800 rounded-full"
+                >Tailwind</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="h-[15rem] md:h-[10rem] rounded-xl z-40 [mask-image:radial-gradient(50%_50%_at_50%_50%,white_0%,transparent_100%)]"
+      >
+        <div
+          class="p-8 overflow-hidden h-full relative flex items-center justify-center"
+        >
+          <div
+            class="flex flex-row flex-shrink-0 justify-center items-center gap-2"
+          >
+            <div
+              id="style-ed6AE"
+              class="rounded-full flex items-center justify-center bg-gray-400 shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)] h-8 w-8 circle-1 style-ed6AE"
+            >
+              <img
+                src="/assets/icons/vscode.svg"
+                alt="VSCode Icon"
+                class="h-6 w-6"
+              />
+            </div>
+            <div
+              id="style-pvfli"
+              class="rounded-full flex items-center justify-center bg-gray-400 shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)] h-12 w-12 circle-2 style-pvfli"
+            >
+              <img
+                src="/assets/icons/android.svg"
+                alt="Android Studio"
+                class="h-6 w-6"
+              />
+            </div>
+            <div
+              id="style-co8vS"
+              class="h-16 w-16 rounded-full flex items-center justify-center bg-gray-400 shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)] circle-3 style-co8vS"
+            >
+              <img
+                src="/assets/icons/discord.svg"
+                alt="Discord Icon"
+                class="h-10 w-10"
+              />
+            </div>
+            <div
+              id="style-ce5cf"
+              class="rounded-full flex items-center justify-center bg-gray-400 shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)] h-12 w-12 circle-4 style-ce5cf"
+            >
+              <img
+                src="/assets/icons/teams.svg"
+                alt="Microsoft teams Icon"
+                class="h-6 w-6"
+              />
+            </div>
+            <div
+              id="style-cq179"
+              class="rounded-full flex items-center justify-center bg-gray-400 shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)] h-8 w-8 circle-5 style-cq179"
+            >
+              <img
+                src="/assets/icons/trello.svg"
+                alt="Trello Icon"
+                class="h-6 w-6"
+              />
+            </div>
+          </div>
+          <div
+            class="h-40 w-px absolute top-20 m-auto z-40 bg-gradient-to-b from-transparent via-cyan-500 to-transparent animate-move"
+          >
+            <div class="w-10 h-32 top-1/2 -translate-y-1/2 absolute -left-10">
+              <div class="absolute inset-0">
+                <span
+                  id="style-85zWm"
+                  class="inline-block bg-black dark:bg-white style-85zWm"
+                ></span
+                ><span
+                  id="style-LbmUy"
+                  class="inline-block bg-black dark:bg-white style-LbmUy"
+                ></span
+                ><span
+                  id="style-OTex5"
+                  class="inline-block bg-black dark:bg-white style-OTex5"
+                ></span
+                ><span
+                  id="style-oUEf7"
+                  class="inline-block bg-black dark:bg-white style-oUEf7"
+                ></span
+                ><span
+                  id="style-9lwEF"
+                  class="inline-block bg-black dark:bg-white style-9lwEF"
+                ></span
+                ><span
+                  id="style-VSPhh"
+                  class="inline-block bg-black dark:bg-white style-VSPhh"
+                ></span
+                ><span
+                  id="style-YKMZp"
+                  class="inline-block bg-black dark:bg-white style-YKMZp"
+                ></span
+                ><span
+                  id="style-D4K7j"
+                  class="inline-block bg-black dark:bg-white style-D4K7j"
+                ></span
+                ><span
+                  id="style-61SdM"
+                  class="inline-block bg-black dark:bg-white style-61SdM"
+                ></span
+                ><span
+                  id="style-xcj7O"
+                  class="inline-block bg-black dark:bg-white style-xcj7O"
+                ></span
+                ><span
+                  id="style-P6qK5"
+                  class="inline-block bg-black dark:bg-white style-P6qK5"
+                ></span
+                ><span
+                  id="style-XRDvo"
+                  class="inline-block bg-black dark:bg-white style-XRDvo"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
