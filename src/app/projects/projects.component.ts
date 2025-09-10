@@ -14,7 +14,7 @@ export class ProjectsComponent {
 
   scroll(direction: 'left' | 'right') {
     const container = this.scrollContainer.nativeElement;
-    const scrollAmount = 400; // largeur à scroller à chaque clic
+    const scrollAmount = 400; 
 
     if (direction === 'left') {
       container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
@@ -64,24 +64,6 @@ export class ProjectsComponent {
     }
   ]
 
-  experiences = [
-    {
-      date_deb: "Juillet 2024",
-      date_fin: "Septembre 2024",
-      title: "Biovatech Bénin",
-      description: "Stage professionnel dévéloppeur fullstack. Dévéloppement d'une application web de formations.",
-      tags: ["NestJS", "Angular", "Tailwind", "Mongo DB", "Firebase"],
-    },
-
-    {
-      date_deb: "Aout 2025",
-      date_fin: "Présent",
-      title: "Elites Studio",
-      description: "Dévéloppeur fullstack. Dévéloppement de solutions digitales, stratégie de digitalisation.",
-      tags: ["NestJS", "Angular", "Tailwind", "Mongo DB", "Firebase", "MySQL", "Scrum", "UML", "IA"],
-    },
-
-  ];
   scrollLeft() {
     if (this.sliderRef) {
       this.sliderRef.nativeElement.scrollBy({
