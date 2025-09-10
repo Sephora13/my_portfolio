@@ -10,6 +10,18 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class ProjectsComponent {
   @ViewChild('sliderRef', { static: false }) sliderRef!: ElementRef<HTMLDivElement>;
+   @ViewChild('scrollContainer', { static: false }) scrollContainer!: ElementRef;
+
+  scroll(direction: 'left' | 'right') {
+    const container = this.scrollContainer.nativeElement;
+    const scrollAmount = 400; // largeur à scroller à chaque clic
+
+    if (direction === 'left') {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
     projects = [
     {
       name: "Gestion d'examens scolaires",
